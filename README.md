@@ -5,11 +5,11 @@
 ## 安装
 
 ```bash
-npm install vapkit
+npm install @shenxiang11/vapkit
 ```
 
 ```ts
-import { VapPlayer, parseMp4 } from "vapkit";
+import { VapPlayer, parseMp4 } from "@shenxiang11/vapkit";
 
 const canvas = document.querySelector("canvas")!;
 const player = new VapPlayer({ canvas });

@@ -1,8 +1,16 @@
 {
-  "name": "vapkit",
+  "name": "@shenxiang11/vapkit",
   "version": "0.1.0",
   "description": "Independent VAP (Video Animation Player) for the web. Not a Tencent SDK wrapper.",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shenxiang11/vapkit-web.git"
+  },
+  "homepage": "https://github.com/shenxiang11/vapkit-web",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
