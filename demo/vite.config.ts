@@ -52,6 +52,12 @@ function stagePublicAssets(): void {
   if (background && background !== backgroundTo) {
     copyFileSync(background, backgroundTo);
   }
+  const missing = gifts.filter((name) => !existsSync(resolve(localPublic, "gifts", name)));
+  if (missing.length > 0 || !existsSync(backgroundTo)) {
+    throw new Error(
+      `Demo videos missing under demo/public (${[...missing, !existsSync(backgroundTo) ? "dong_qu_chun_lai.mp4" : ""].filter(Boolean).join(", ")}). Copy them before deploying.`,
+    );
+  }
 }
 
 function demoAssets(): Plugin {
