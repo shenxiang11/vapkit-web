@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>直播间</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="room">
+      <video id="background" src="/background/dong_qu_chun_lai.mp4" autoplay muted loop playsinline></video>
+      <canvas id="gift" hidden></canvas>
+
+      <header class="top-bar">
+        <div class="host">
+          <span class="avatar" aria-hidden="true">👤</span>
+          <div>
+            <div class="host-name">冬去春来</div>
+            <div class="host-meta">1.2万人气</div>
+          </div>
+          <button id="follow" type="button">关注</button>
+        </div>
+        <button id="mute" type="button" class="circle-btn" aria-label="打开声音">🔇</button>
+        <button id="close-panel" type="button" class="circle-btn" aria-label="关闭礼物栏">✕</button>
+      </header>
+
+      <div class="bottom-stack">
+        <div class="mid-row">
+          <div id="comments" class="comments"></div>
+          <div id="side-actions" class="side-actions hidden">
+            <button id="like" type="button" class="side-btn">
+              <span>♥</span>
+              <small id="like-count">1284</small>
+            </button>
+            <button type="button" class="side-btn">
+              <span>↗</span>
+              <small>分享</small>
+            </button>
+            <button id="open-gifts-side" type="button" class="side-btn">
+              <span>🎁</span>
+              <small>礼物</small>
+            </button>
+          </div>
+        </div>
+        <div id="composer" class="composer hidden">
+          <div class="input-pill">说点什么…</div>
+          <button id="open-gifts-bar" type="button" class="circle-btn gold" aria-label="打开礼物栏">🎁</button>
+        </div>
+      </div>
+
+      <section id="panel" class="panel">
+        <div class="handle"></div>
+        <div class="panel-head">
+          <h1>礼物</h1>
+          <div id="coins" class="coins">✦ 8888</div>
+        </div>
+        <div id="gifts" class="gift-grid"></div>
+        <p id="send-error" class="error hidden"></p>
+        <button id="send" type="button" class="send">送给冬去春来</button>
+      </section>
+    </div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

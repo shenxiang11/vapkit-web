@@ -1,0 +1,37 @@
+{
+  "name": "vapkit",
+  "version": "0.1.0",
+  "description": "Independent VAP (Video Animation Player) for the web. Not a Tencent SDK wrapper.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "dev": "vite --config demo/vite.config.ts",
+    "test": "vitest run"
+  },
+  "keywords": [
+    "vap",
+    "alpha-video",
+    "webgl",
+    "gift"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.0",
+    "vitest": "^3.0.8"
+  }
+}
