@@ -1,4 +1,4 @@
-import { createReadStream, existsSync } from "node:fs";
+import { copyFileSync, createReadStream, existsSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { Plugin } from "vite";
@@ -30,9 +30,36 @@ function resolveBackground(name: string): string | null {
   ]);
 }
 
+function stagePublicAssets(): void {
+  const gifts = [
+    "user_246106.mp4",
+    "user_245341.mp4",
+    "user_2390.mp4",
+    "user_3123.mp4",
+    "user_3179.mp4",
+  ];
+  mkdirSync(resolve(localPublic, "gifts"), { recursive: true });
+  mkdirSync(resolve(localPublic, "background"), { recursive: true });
+  for (const name of gifts) {
+    const from = resolveGift(name);
+    const to = resolve(localPublic, "gifts", name);
+    if (from && from !== to) {
+      copyFileSync(from, to);
+    }
+  }
+  const background = resolveBackground("dong_qu_chun_lai.mp4");
+  const backgroundTo = resolve(localPublic, "background", "dong_qu_chun_lai.mp4");
+  if (background && background !== backgroundTo) {
+    copyFileSync(background, backgroundTo);
+  }
+}
+
 function demoAssets(): Plugin {
   return {
     name: "vap-demo-assets",
+    buildStart() {
+      stagePublicAssets();
+    },
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         const url = req.url?.split("?")[0] ?? "";
@@ -69,5 +96,9 @@ export default defineConfig({
     fs: {
       allow: [root, resolve(root, ".."), androidAssets, iosResources],
     },
+  },
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
   },
 });

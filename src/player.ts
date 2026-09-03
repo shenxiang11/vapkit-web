@@ -1,6 +1,6 @@
-import { parseMp4 } from "./parser.ts";
-import { VapGlRenderer } from "./renderer.ts";
-import type { VapManifest, VapPlaybackState } from "./types.ts";
+import { parseMp4 } from "./parser";
+import { VapGlRenderer } from "./renderer";
+import type { VapManifest, VapPlaybackState } from "./types";
 
 export type VapPlayerOptions = {
   canvas: HTMLCanvasElement;

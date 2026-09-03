@@ -5,7 +5,7 @@ import {
   VapError,
   rectIsContained,
   rectIsEmpty,
-} from "./types.ts";
+} from "./types";
 
 const VAPC = [0x76, 0x61, 0x70, 0x63] as const;
 

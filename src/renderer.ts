@@ -1,5 +1,5 @@
-import type { VapInfo } from "./types.ts";
-import { VapError } from "./types.ts";
+import type { VapInfo } from "./types";
+import { VapError } from "./types";
 
 const VERTEX = `
 attribute vec2 aPosition;

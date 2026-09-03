@@ -26,6 +26,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --clean",
+    "build:demo": "vite build --config demo/vite.config.ts",
     "dev": "vite --config demo/vite.config.ts",
     "test": "vitest run"
   },
