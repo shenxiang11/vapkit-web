@@ -14,12 +14,12 @@ const gifts: GiftItem[] = [
   { id: "spark_fist", name: "热血一拳", price: 99, asset: "/gifts/user_2390.mp4", emoji: "✊" },
   { id: "glow_cheer", name: "星光应援", price: 520, asset: "/gifts/user_3123.mp4", emoji: "🌟" },
   { id: "love_petals", name: "告白花语", price: 199, asset: "/gifts/user_3179.mp4", emoji: "💗" },
+  { id: "super_rocket", name: "超级火箭", price: 666, asset: "/gifts/super_rocket.mp4", emoji: "🚀" },
   { id: "coming_rose", name: "星愿玫瑰", price: 99, asset: null, emoji: "🌹" },
   { id: "coming_car", name: "梦幻跑车", price: 520, asset: null, emoji: "🚗" },
   { id: "coming_castle", name: "水晶城堡", price: 1314, asset: null, emoji: "🏰" },
   { id: "coming_firework", name: "星河烟花", price: 299, asset: null, emoji: "🎆" },
   { id: "coming_crown", name: "加冕皇冠", price: 888, asset: null, emoji: "👑" },
-  { id: "coming_rocket", name: "冲天火箭", price: 666, asset: null, emoji: "🚀" },
   { id: "coming_yacht", name: "海上游艇", price: 1888, asset: null, emoji: "🛥️" },
 ];
 

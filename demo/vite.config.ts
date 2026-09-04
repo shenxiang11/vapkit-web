@@ -37,6 +37,7 @@ function stagePublicAssets(): void {
     "user_2390.mp4",
     "user_3123.mp4",
     "user_3179.mp4",
+    "super_rocket.mp4",
   ];
   mkdirSync(resolve(localPublic, "gifts"), { recursive: true });
   mkdirSync(resolve(localPublic, "background"), { recursive: true });
